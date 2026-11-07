@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 8 English | Unit 7C: I Can Take Care of Myself (Pages 118–122)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans Telugu', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', 'Noto Sans Telugu', sans-serif;
+      background-color: #f8fafc;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .vocab-pill {
+      background: linear-gradient(120deg, #fef08a 0%, #fde047 100%);
+      padding: 1px 6px;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      border-bottom: 2px dashed #ca8a04;
+      color: #713f12;
+      display: inline-block;
+    }
+    .bar-transition {
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="text-slate-800 pb-24">
+
+  <!-- STICKY HEADER WITH LIVE SCREEN TIME & SCORE TRACKER -->
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-indigo-900 via-purple-900 to-rose-900 text-white shadow-xl">
+    <div class="max-w-5xl mx-auto px-3 sm:px-6 py-2.5">
+      <div class="flex flex-wrap items-center justify-between gap-2">
+        <!-- Brand & Title -->
+        <div class="flex items-center gap-2.5">
+          <div class="w-10 h-10 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-extrabold text-lg shadow-md">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-[11px] uppercase tracking-wider bg-white/15 px-2 py-0.5 rounded-full font-semibold text-amber-300 border border-white/20">Class 8 • Unit 7 (C Reading)</span>
+              <span class="text-[11px] text-purple-200 hidden sm:inline">Pages 118–122</span>
+            </div>
+            <h1 class="text-base sm:text-lg font-extrabold leading-tight">I Can Take Care of Myself</h1>
+          </div>
+        </div>
+
+        <!-- Live Screen Timer, Score & Quick Submit -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <div class="bg-slate-950/60 border border-amber-400/40 rounded-xl px-3 py-1.5 flex items-center gap-2 shadow-inner" title="Active Study & Watch Time">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <i class="fa-regular fa-clock text-amber-300 text-xs sm:text-sm"></i>
+            <div class="text-left">
+              <div class="text-[9px] uppercase tracking-wider text-purple-200 leading-none">Screen Time</div>
+              <div id="headerTimer" class="text-xs sm:text-sm font-mono font-bold text-white leading-tight">00:00</div>
+            </div>
+          </div>
+
+          <div class="bg-amber-400 text-slate-950 rounded-xl px-3 py-1.5 flex items-center gap-1.5 font-extrabold text-xs sm:text-sm shadow">
+            <i class="fa-solid fa-star text-amber-700"></i>
+            <span id="scoreDisplay">0</span><span class="text-[11px] font-bold">/30 pts</span>
+          </div>
+
+          <button onclick="switchTab('tab-report')" class="bg-emerald-500 hover:bg-emerald-600 active:scale-95 transition text-white text-xs sm:text-sm font-extrabold px-3 py-2 rounded-xl shadow flex items-center gap-1.5">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span class="hidden md:inline">Submit Report</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="mt-2 bg-slate-950/50 rounded-full h-1.5 w-full overflow-hidden">
+        <div id="overallProgress" class="bg-gradient-to-r from-amber-300 via-emerald-400 to-cyan-400 h-full transition-all duration-500" style="width: 16%"></div>
+      </div>
+
+      <!-- Mobile-Friendly Horizontal Pill Navigation -->
+      <nav class="mt-2.5 flex space-x-1.5 overflow-x-auto no-scrollbar pb-1 text-xs sm:text-sm font-semibold">
+        <button onclick="switchTab('tab-story')" id="btn-tab-story" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg bg-white text-purple-950 font-extrabold shadow-sm flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-book-open"></i> 1. Story & Guide (Pg 118-119)
+        </button>
+        <button onclick="switchTab('tab-comp')" id="btn-tab-comp" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-purple-100 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-circle-question"></i> 2. Comprehension & Quiz (Pg 120)
+        </button>
+        <button onclick="switchTab('tab-imr')" id="btn-tab-imr" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-purple-100 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-chart-column"></i> 3. Study Skills: IMR Graph (Pg 120-121)
+        </button>
+        <button onclick="switchTab('tab-oral')" id="btn-tab-oral" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-purple-100 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-microphone-lines"></i> 4. Debate & Opinions (Pg 121)
+        </button>
+        <button onclick="switchTab('tab-project')" id="btn-tab-project" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-purple-100 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-clipboard-list"></i> 5. Project & Safety Rules (Pg 121-122)
+        </button>
+        <button onclick="switchTab('tab-report')" id="btn-tab-report" class="tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg bg-amber-400/20 border border-amber-300/40 hover:bg-amber-400/30 text-amber-200 flex items-center gap-1.5 transition">
+          <i class="fa-solid fa-paper-plane"></i> 6. Submit Watch Report
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="max-w-5xl mx-auto px-3 sm:px-6 pt-5 space-y-8">
+
+    <!-- HERO BANNER -->
+    <section class="bg-gradient-to-br from-purple-50 via-rose-50 to-amber-50 border border-purple-200 rounded-2xl p-4 sm:p-6 shadow-sm">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-2 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-800 text-white text-xs font-bold">
+            <i class="fa-solid fa-crown text-amber-300"></i> Unit 7 • Women Empowerment (మహిళా సాధికారత)
+          </div>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+            "I Can Take Care of Myself" (నన్ను నేను చూసుకోగలను!)
+          </h2>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            A powerful parable about a mother rat searching for the "most powerful being on earth" to marry her daughter—only to discover from her wise daughter that <strong>true power and protection come from self-reliance, education, and hard work!</strong>
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <button onclick="speakText('Welcome to Class 8 English, Unit 7 C Reading: I Can Take Care of Myself. This inspiring story teaches us that true safety and power do not come from depending on someone rich or powerful, but from standing on our own feet through education and hard work.')" class="bg-purple-800 hover:bg-purple-900 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5 transition">
+              <i class="fa-solid fa-volume-high"></i> Listen to Lesson Intro
+            </button>
+            <button onclick="stopSpeech()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold px-3 py-2 rounded-xl transition">
+              <i class="fa-solid fa-stop"></i> Stop Audio
+            </button>
+          </div>
+        </div>
+
+        <!-- Golden Quote Card -->
+        <div class="w-full md:w-80 bg-white/90 p-4 rounded-2xl border-2 border-amber-300 shadow-sm space-y-1.5">
+          <div class="text-xs font-extrabold uppercase tracking-wider text-amber-700 flex items-center gap-1.5">
+            <i class="fa-solid fa-quote-left"></i> Golden Message (Page 119)
+          </div>
+          <p class="text-xs sm:text-sm font-bold text-slate-800 italic">
+            "One has to depend on the power within oneself to seek the target in one's life."
+          </p>
+          <p class="text-[11px] text-purple-900 font-semibold pt-1 border-t border-slate-100">
+            మన లక్ష్యాన్ని చేరుకోవడానికి ఇతరుల ఆస్తిపాస్తులపై కాకుండా మనలో ఉన్న అంతర్గత శక్తిపైనే ఆధారపడాలి.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================== -->
+    <!-- TAB 1: STORY & EASY GUIDE (PAGES 118–119)                  -->
+    <!-- ========================================================== -->
+    <div id="tab-story" class="tab-panel space-y-6">
+
+      <!-- Interactive Visual Chain: "Who is the Most Powerful Being on Earth?" -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-purple-700">Interactive Story Map</span>
+            <h3 class="text-lg font-extrabold text-slate-900">Tap Each Character in the "Chain of Power" (శక్తి గొలుసు)</h3>
+          </div>
+          <span class="text-xs bg-amber-100 text-amber-900 px-3 py-1 rounded-full font-bold">Tap any card to hear & learn!</span>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+          <!-- Step 1: Sun -->
+          <button onclick="showChainStep(1)" id="chain-btn-1" class="p-3 rounded-xl border-2 border-amber-400 bg-amber-50 text-center space-y-1 hover:shadow-md transition">
+            <div class="text-3xl">☀️</div>
+            <div class="font-extrabold text-xs sm:text-sm text-amber-950">1. Sun God</div>
+            <div class="text-[11px] text-amber-800">"Rain is greater!"</div>
+          </button>
+
+          <!-- Step 2: Rain -->
+          <button onclick="showChainStep(2)" id="chain-btn-2" class="p-3 rounded-xl border-2 border-slate-200 bg-slate-50 text-center space-y-1 hover:shadow-md transition">
+            <div class="text-3xl">🌧️</div>
+            <div class="font-extrabold text-xs sm:text-sm text-sky-950">2. Rain God</div>
+            <div class="text-[11px] text-sky-800">"Mountain is greater!"</div>
+          </button>
+
+          <!-- Step 3: Mountain -->
+          <button onclick="showChainStep(3)" id="chain-btn-3" class="p-3 rounded-xl border-2 border-slate-200 bg-slate-50 text-center space-y-1 hover:shadow-md transition">
+            <div class="text-3xl">⛰️</div>
+            <div class="font-extrabold text-xs sm:text-sm text-emerald-950">3. Mountain God</div>
+            <div class="text-[11px] text-emerald-800">"Worm is greater!"</div>
+          </button>
+
+          <!-- Step 4: Earthworm -->
+          <button onclick="showChainStep(4)" id="chain-btn-4" class="p-3 rounded-xl border-2 border-slate-200 bg-slate-50 text-center space-y-1 hover:shadow-md transition">
+            <div class="text-3xl">🪱</div>
+            <div class="font-extrabold text-xs sm:text-sm text-amber-900">4. Earthworm</div>
+            <div class="text-[11px] text-amber-800">Softens soil for life</div>
+          </button>
+
+          <!-- Step 5: Daughter Rat -->
+          <button onclick="showChainStep(5)" id="chain-btn-5" class="col-span-2 sm:col-span-1 p-3 rounded-xl border-2 border-slate-200 bg-rose-50 text-center space-y-1 hover:shadow-md transition">
+            <div class="text-3xl">🐭✨</div>
+            <div class="font-extrabold text-xs sm:text-sm text-rose-950">5. Daughter Rat</div>
+            <div class="text-[11px] text-rose-800 font-bold">"Self-Reliance is True Power!"</div>
+          </button>
+        </div>
+
+        <!-- Dynamic Chain Explanation Box -->
+        <div id="chainDetailBox" class="p-4 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-300 text-sm space-y-1.5">
+          <div class="font-extrabold text-amber-950 flex items-center justify-between">
+            <span>☀️ Step 1: Mother Rat asks the Bright Sun God</span>
+            <button onclick="speakText(document.getElementById('chainDetailText').innerText)" class="text-xs bg-amber-200 hover:bg-amber-300 text-amber-950 px-2.5 py-1 rounded-lg font-bold"><i class="fa-solid fa-volume-high"></i> Listen</button>
+          </div>
+          <p id="chainDetailText" class="text-slate-800 text-xs sm:text-sm">
+            <strong>Why Mother Rat chose him:</strong> All living beings depend on the sun. <br/>
+            <strong>Sun God's reply:</strong> "No, the <strong>Rain</strong> is greater than me! Without the rain, no crop or tree would grow, and there would be no water on earth."
+          </p>
+          <p id="chainDetailTelugu" class="text-xs text-amber-900 font-semibold">
+            తెలుగు వివరణ: సూర్యుడు అందరికీ వెలుగునిస్తాడు కాబట్టి ఆయనే గొప్పవాడని తల్లి ఎలుక అనుకుంటుంది. కానీ సూర్యుడు తనకంటే వర్షమే గొప్పదని, వర్షం లేకపోతే పంటలు, చెట్లు పెరగవని చెప్తాడు.
+          </p>
+        </div>
+      </div>
+
+      <!-- Full Story Text (Pages 118–119) in 4 Easy-to-Understand Scene Cards -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div class="bg-purple-900 text-white px-5 py-3.5 flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs uppercase tracking-wider text-amber-300 font-bold">Textbook Pages 118–119 • C Reading</span>
+            <h3 class="text-lg font-extrabold">Full Story with Audio & Easy Bilingual Notes</h3>
+          </div>
+          <button onclick="speakText(document.getElementById('full-story-container').innerText)" class="bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-extrabold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5 transition">
+            <i class="fa-solid fa-headphones"></i> Read Aloud Entire Story
+          </button>
+        </div>
+
+        <div id="full-story-container" class="p-4 sm:p-6 space-y-6">
+
+          <!-- Scene 1: Sun God & Rain God (Page 118) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+              <span class="font-extrabold text-purple-900 text-sm sm:text-base flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs">1</span>
+                Part 1: The Search Begins — Sun God & Rain God (Page 118)
+              </span>
+              <button onclick="speakText(document.getElementById('story-p1').innerText)" class="text-purple-700 hover:text-purple-900 text-xs font-bold flex items-center gap-1">
+                <i class="fa-solid fa-volume-high"></i> Listen
+              </button>
+            </div>
+            <div id="story-p1" class="text-sm sm:text-base leading-relaxed text-slate-800 space-y-2.5">
+              <p>
+                Once upon a time, there was a mother rat who wanted to get her young daughter married as soon as possible, to the most <span class="vocab-pill" onclick="showWordModal('powerful (adj)', 'having great power, strength, or influence (అత్యంత శక్తివంతమైన)')">powerful</span> being that she could find. ‘Who is the most powerful being on earth?’ she asked herself. She saw the bright sun god travelling across the sky, and thought, ‘Surely, all beings <span class="vocab-pill" onclick="showWordModal('depend on (phr.v)', 'rely on someone or something for support/survival (ఆధారపడుట)')">depend on</span> the sun. The sun god is the most powerful being on this earth.’ She asked the sun god, ‘Are you the most powerful being on this earth?’ He smiled, ‘No, there is someone greater than me to help the <span class="vocab-pill" onclick="showWordModal('creatures (n)', 'living beings / animals and humans (జీవులు / ప్రాణులు)')">creatures</span> – it is the rain. Without the rain, no crop or tree would grow. There would be no water on earth.’
+              </p>
+              <p>
+                Just then, it began to rain. She thought, “How wonderful the rain is! It makes the whole land green. It makes the rivers flow. Surely, the rain god is the most powerful being on this earth.” She asked the rain god, ‘Are you the most powerful being on this earth?’ He smiled, ‘No, there is someone greater than me to help the creatures – it is the mountain. Without the mountain, there would be no <span class="vocab-pill" onclick="showWordModal('protection (n)', 'keeping someone or something safe from harm (రక్షణ / భద్రత)')">protection</span> for the creatures of this earth. The mountain blocks the clouds, and lets the water flow safely for the people and all life in the <span class="vocab-pill" onclick="showWordModal('valleys (n)', 'low areas of land between hills or mountains (లోయలు)')">valleys</span>.’
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-950 space-y-1">
+              <div><strong>💡 Easy Summary:</strong> A mother rat wanted her young daughter to marry the most powerful being on earth so she would be safe. She asked the <strong>Sun God</strong>, who directed her to the <strong>Rain God</strong> (who gives water for crops). The Rain God then pointed her to the <strong>Mountain God</strong> (who blocks clouds and guides river water safely into valleys).</div>
+              <div><strong>తెలుగు వివరణ:</strong> ఒకానొకప్పుడు ఒక తల్లి ఎలుక తన కూతురిని భూమి మీద అత్యంత శక్తివంతుడైన వాడికి ఇచ్చి పెళ్లి చేయాలనుకుంది. మొదట సూర్యభగవానుడిని అడిగితే, తనకంటే పంటలను పెంచే <strong>వర్షదేవుడే</strong> గొప్పవాడని చెప్తాడు. వర్షదేవుడిని అడిగితే, మేఘాలను ఆపి లోయల్లోకి నీటిని సురక్షితంగా పంపే <strong>పర్వతరాజే (కొండ)</strong> తనకంటే గొప్పవాడని చెప్తాడు.</div>
+            </div>
+          </div>
+
+          <!-- Scene 2: Mountain God & Earthworm (Page 118) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+              <span class="font-extrabold text-purple-900 text-sm sm:text-base flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs">2</span>
+                Part 2: The Mountain God & The Humble Earthworm (Page 118)
+              </span>
+              <button onclick="speakText(document.getElementById('story-p2').innerText)" class="text-purple-700 hover:text-purple-900 text-xs font-bold flex items-center gap-1">
+                <i class="fa-solid fa-volume-high"></i> Listen
+              </button>
+            </div>
+            <div id="story-p2" class="text-sm sm:text-base leading-relaxed text-slate-800 space-y-2.5">
+              <p>
+                She looked around, and saw the beautiful blue mountain. She thought, “How big and strong the mountain is! It <span class="vocab-pill" onclick="showWordModal('withstands (v)', 'stands strong against force or storms without giving in (తట్టుకొని నిలబడుట)')">withstands</span> all winds and storms. It protects the earth and its creatures. Surely, the mountain god is the most powerful being on this earth.” She asked the mountain god, ‘Are you the most powerful being on this earth?’ He smiled, ‘No, there is someone greater than me to help the creatures – it is the worm. Without the worm, the earth would be hard and nothing would grow in the soil. The <span class="vocab-pill" onclick="showWordModal('earthworm (n)', 'a small worm living in soil that loosens earth for plants (వానపాము - రైతు మిత్రుడు)')">earthworm</span> is the greatest friend that living beings can have.’
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-950 space-y-1">
+              <div><strong>💡 Easy Summary:</strong> The Mother Rat admired the huge blue mountain that withstands winds and storms. But the Mountain God humbly said that the tiny <strong>Earthworm</strong> is greater because it loosens the hard soil so plants can grow, making it the greatest friend of all living beings!</div>
+              <div><strong>తెలుగు వివరణ:</strong> తుఫానులను, గాలులను తట్టుకొని నిలబడే పర్వతరాజును తల్లి ఎలుక అడిగినప్పుడు, తనకంటే <strong>వానపాము (Earthworm)</strong> గొప్పదని చెప్తాడు. వానపాము లేకపోతే నేల గట్టిపడిపోయి ఏ మొక్కా మొలవదని, జీవులన్నింటికీ వానపామే గొప్ప స్నేహితుడని వివరిస్తాడు.</div>
+            </div>
+          </div>
+
+          <!-- Scene 3: Daughter Rat Questions Her Mother (Page 119) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+              <span class="font-extrabold text-purple-900 text-sm sm:text-base flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs">3</span>
+                Part 3: The Daughter Rat’s Wise Questions (Page 119)
+              </span>
+              <button onclick="speakText(document.getElementById('story-p3').innerText)" class="text-purple-700 hover:text-purple-900 text-xs font-bold flex items-center gap-1">
+                <i class="fa-solid fa-volume-high"></i> Listen
+              </button>
+            </div>
+            <div id="story-p3" class="text-sm sm:text-base leading-relaxed text-slate-800 space-y-2.5">
+              <p>
+                Just then, she saw her daughter coming towards her. She asked her mother, ‘What are you doing?’
+              </p>
+              <p>
+                ‘I am trying to find out who the most powerful being on earth is,’ said the mother. ‘Why?’ asked her daughter. ‘I want you to marry him and be safe,’ said the mother.
+              </p>
+              <p>
+                ‘Why would I need to marry to be safe?’ asked the daughter. ‘To be safe, I need to know how to take care of myself.’
+              </p>
+              <p>
+                ‘You are small. You need protection,’ said the mother rat.
+              </p>
+              <p>
+                ‘The best protection is to be able to protect oneself,’ said the daughter. ‘To protect myself, I need to learn to be strong and work hard.’
+              </p>
+              <p>
+                ‘But why would you need to work? If you marry someone rich and powerful, he will <span class="vocab-pill" onclick="showWordModal('support (v)', 'provide money, food, and care for someone (పోషించుట / ఆదుకొనుట)')">support</span> you,’ said the mother rat.
+              </p>
+              <p class="font-semibold text-purple-950 bg-purple-50 p-3 rounded-xl border-l-4 border-purple-700">
+                ‘Who is rich and powerful, amma?’ asked the daughter. ‘The truly powerful being is one who can take care of oneself and those she loves. One is truly rich, if one is rich in love. I want to be powerful myself, so that I can take care of myself and those that I love.’
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-purple-50 border border-purple-200 text-xs text-purple-950 space-y-1">
+              <div><strong>💡 Easy Summary:</strong> The daughter rat tells her mother that marriage is not a shortcut to safety. The best protection is learning to protect oneself by being strong and working hard. True power is taking care of oneself and loved ones, and true wealth is being rich in love!</div>
+              <div><strong>తెలుగు వివరణ:</strong> సురక్షితంగా ఉండటానికి పెళ్లి చేసుకోవాల్సిన అవసరం లేదని, తనను తాను రక్షించుకోవడమే అత్యుత్తమ రక్షణ అని కూతురు ఎలుక తల్లికి చెప్తుంది. కష్టపడి పనిచేయడం, ధైర్యంగా ఉండటం నేర్చుకుంటానని, తనను తాను చూసుకుంటూ తాను ప్రేమించే వారిని కూడా చూసుకోగలగడమే నిజమైన శక్తి అని చెప్తుంది.</div>
+            </div>
+          </div>
+
+          <!-- Scene 4: Standing on One's Own Feet (Page 119) -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+              <span class="font-extrabold text-purple-900 text-sm sm:text-base flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-purple-100 text-purple-800 flex items-center justify-center text-xs">4</span>
+                Part 4: Standing on One’s Own Feet — The Power Within (Page 119)
+              </span>
+              <button onclick="speakText(document.getElementById('story-p4').innerText)" class="text-purple-700 hover:text-purple-900 text-xs font-bold flex items-center gap-1">
+                <i class="fa-solid fa-volume-high"></i> Listen
+              </button>
+            </div>
+            <div id="story-p4" class="text-sm sm:text-base leading-relaxed text-slate-800 space-y-2.5">
+              <p>
+                The mother rat was confused. ‘What will you do?’ she asked. ‘I will learn to <span class="vocab-pill" onclick="showWordModal('stand on my own feet (idiom)', 'to be independent and able to take care of oneself without relying on others (సొంత కాళ్లపై నిలబడుట / స్వయం సమృద్ధి)')">stand on my own feet</span>. I will find work to do that supports me, and my family. For that, I need to learn more about the world, and learn to live in it as a good creature. Let me first learn to take care of myself.’
+              </p>
+              <p>
+                ‘But don’t you need help?’ asked the mother rat.
+              </p>
+              <p class="font-semibold text-rose-950 bg-rose-50 p-3.5 rounded-xl border-l-4 border-rose-600">
+                ‘Yes, from you, amma!’ said the daughter. ‘Help me support myself. I am not interested in marrying anybody, rich or powerful. Depending on another person’s power, position or <span class="vocab-pill" onclick="showWordModal('prosperity (n)', 'wealth and success (సంపద / ఐశ్వర్యం)')">prosperity</span> does not promise peace and <span class="vocab-pill" onclick="showWordModal('security (n)', 'safety and freedom from worry/danger (భద్రత)')">security</span> in the long run. One has to depend on the power within oneself to seek the <span class="vocab-pill" onclick="showWordModal('target (n)', 'goal or aim in life (లక్ష్యం)')">target</span> in one’s life.’
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-950 space-y-1">
+              <div><strong>💡 Easy Summary:</strong> The daughter asks her mother for one real help: <em>"Help me support myself!"</em> She explains that depending on someone else's power, position, or wealth never guarantees lasting peace or security. Every girl must rely on the power within herself to achieve her life's goals.</div>
+              <div><strong>తెలుగు వివరణ:</strong> తన సొంత కాళ్లపై తాను నిలబడటానికి సహాయం చేయమని కూతురు తల్లిని అడుగుతుంది. వేరొకరి అధికారం, పదవి లేదా సంపదపై ఆధారపడటం వల్ల శాశ్వతమైన శాంతి, భద్రత లభించవని, మన జీవిత లక్ష్యాన్ని చేరుకోవడానికి మనలోని అంతర్గత శక్తిపైనే ఆధారపడాలని కూతురు స్పష్టం చేస్తుంది.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="flex justify-end">
+        <button onclick="switchTab('tab-comp')" class="bg-purple-800 hover:bg-purple-900 text-white font-bold px-5 py-2.5 rounded-xl shadow flex items-center gap-2">
+          Next: Page 120 Comprehension & Quiz <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- TAB 2: COMPREHENSION & QUICK QUIZ (PAGE 120)               -->
+    <!-- ========================================================== -->
+    <div id="tab-comp" class="tab-panel hidden space-y-6">
+
+      <!-- Page 120 Comprehension Questions (1 to 3) -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-5">
+        <div class="border-b border-slate-100 pb-3">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-purple-700">Textbook Page 120 • Comprehension</span>
+          <h3 class="text-lg font-extrabold text-slate-900">Answer the following questions (Model Notes + Practice)</h3>
+        </div>
+
+        <!-- Question 1 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+          <div class="flex items-start justify-between gap-2">
+            <div class="font-extrabold text-sm sm:text-base text-slate-900">
+              1. What do you think is the most important thing to learn to live well?
+            </div>
+            <button onclick="speakText(document.getElementById('comp-q1-ans').innerText)" class="text-purple-700 text-xs font-bold shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+          </div>
+          <div id="comp-q1-ans" class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-950 space-y-1.5">
+            <p><strong>Model Answer:</strong> The most important thing to learn to live well is <strong>self-reliance (learning to take care of oneself and stand on one's own feet)</strong>. Instead of depending on others' wealth or power, we must gain knowledge about the world, work hard, earn our own livelihood, and live with love, dignity, and confidence.</p>
+            <p class="text-xs text-emerald-800 font-semibold">తెలుగులో: బాగా జీవించడానికి నేర్చుకోవాల్సిన అత్యంత ముఖ్యమైన విషయం <strong>స్వయం సమృద్ధి (మన సొంత కాళ్లపై మనం నిలబడటం)</strong>. ఇతరులపై ఆధారపడకుండా విద్య, కష్టపడే తత్వంతో మనల్ని మనం పోషించుకోవడం నేర్చుకోవాలి.</p>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+          <div class="flex items-start justify-between gap-2">
+            <div class="font-extrabold text-sm sm:text-base text-slate-900">
+              2. What are the skills or qualities that would help you to be independent in your life?
+            </div>
+            <button onclick="speakText(document.getElementById('comp-q2-ans').innerText)" class="text-purple-700 text-xs font-bold shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+          </div>
+          <div id="comp-q2-ans" class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-950 space-y-1.5">
+            <p><strong>Model Answer:</strong> The essential skills and qualities that help us become independent in life are:</p>
+            <ul class="list-disc list-inside space-y-1 pl-1">
+              <li><strong>Good Education & Knowledge</strong> about the world.</li>
+              <li><strong>Hard Work & Determination</strong> to achieve our goals.</li>
+              <li><strong>Self-Confidence & Courage</strong> to face problems without fear.</li>
+              <li><strong>Vocational / Career Skills</strong> & Financial Literacy to earn a living.</li>
+              <li><strong>Decision-Making & Communication Skills</strong> to live as a responsible citizen.</li>
+            </ul>
+            <p class="text-xs text-emerald-800 font-semibold">తెలుగులో: మంచి విద్య, కష్టపడే తత్వం, ఆత్మవిశ్వాసం, ధైర్యం, మరియు వృత్తి నైపుణ్యాలు మనల్ని జీవితంలో స్వతంత్రంగా నిలబడేలా చేస్తాయి.</p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+          <div class="flex items-start justify-between gap-2">
+            <div class="font-extrabold text-sm sm:text-base text-slate-900">
+              3. Do you agree / disagree with the daughter of the mother rat? Give reasons for your response.
+            </div>
+            <button onclick="speakText(document.getElementById('comp-q3-ans').innerText)" class="text-purple-700 text-xs font-bold shrink-0"><i class="fa-solid fa-volume-high"></i> Listen</button>
+          </div>
+          <div id="comp-q3-ans" class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-950 space-y-1.5">
+            <p><strong>Model Answer:</strong> Yes, I <strong>strongly agree</strong> with the daughter rat for the following reasons:</p>
+            <ul class="list-disc list-inside space-y-1 pl-1">
+              <li><strong>Self-Protection is the Best Protection:</strong> No one can protect us forever unless we learn to protect ourselves.</li>
+              <li><strong>External Wealth is Temporary:</strong> Depending on another person's power, position, or prosperity does not guarantee peace, respect, or security in the long run.</li>
+              <li><strong>Empowerment:</strong> When a girl is educated and earns her own living, she can support both herself and her family with dignity.</li>
+            </ul>
+            <p class="text-xs text-emerald-800 font-semibold">తెలుగులో: అవును, నేను కూతురు ఎలుక అభిప్రాయంతో పూర్తిగా ఏకీభవిస్తాను. ఎందుకంటే ఇతరుల ఆస్తి, అధికారాలపై ఆధారపడితే శాశ్వత భద్రత ఉండదు. సొంత శక్తిపై ఆధారపడినప్పుడే ఆత్మగౌరవంతో జీవించగలం.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive 6-Question Check Your Understanding Quiz -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600">Interactive Practice Quiz (30 Points)</span>
+            <h3 class="text-lg font-extrabold text-slate-900">Test Your Understanding of "I Can Take Care of Myself"</h3>
+          </div>
+          <span class="text-xs bg-purple-100 text-purple-900 px-3 py-1 rounded-full font-bold">+5 pts per correct answer</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Quiz Q1 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-sm text-slate-900">1. Whom did the mother rat approach FIRST as the most powerful being?</div>
+            <div class="space-y-1.5 text-xs sm:text-sm">
+              <button onclick="checkQuiz(1, 'a', 'b')" id="qz-1-a" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">a) The Mountain God</button>
+              <button onclick="checkQuiz(1, 'b', 'b')" id="qz-1-b" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">b) The Sun God</button>
+              <button onclick="checkQuiz(1, 'c', 'b')" id="qz-1-c" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">c) The Rain God</button>
+            </div>
+            <div id="qz-exp-1" class="hidden text-xs p-2 rounded-lg"></div>
+          </div>
+
+          <!-- Quiz Q2 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-sm text-slate-900">2. Why did the Rain God say the Mountain is greater than him?</div>
+            <div class="space-y-1.5 text-xs sm:text-sm">
+              <button onclick="checkQuiz(2, 'a', 'a')" id="qz-2-a" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">a) Because the mountain blocks the clouds and lets water flow safely into valleys.</button>
+              <button onclick="checkQuiz(2, 'b', 'a')" id="qz-2-b" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">b) Because the mountain is blue in colour.</button>
+              <button onclick="checkQuiz(2, 'c', 'a')" id="qz-2-c" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">c) Because the mountain gives sunlight.</button>
+            </div>
+            <div id="qz-exp-2" class="hidden text-xs p-2 rounded-lg"></div>
+          </div>
+
+          <!-- Quiz Q3 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-sm text-slate-900">3. According to the Mountain God, who is the "greatest friend that living beings can have"?</div>
+            <div class="space-y-1.5 text-xs sm:text-sm">
+              <button onclick="checkQuiz(3, 'a', 'c')" id="qz-3-a" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">a) The Wind</button>
+              <button onclick="checkQuiz(3, 'b', 'c')" id="qz-3-b" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">b) The River</button>
+              <button onclick="checkQuiz(3, 'c', 'c')" id="qz-3-c" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">c) The Earthworm</button>
+            </div>
+            <div id="qz-exp-3" class="hidden text-xs p-2 rounded-lg"></div>
+          </div>
+
+          <!-- Quiz Q4 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-sm text-slate-900">4. What did the daughter rat say is the "best protection"?</div>
+            <div class="space-y-1.5 text-xs sm:text-sm">
+              <button onclick="checkQuiz(4, 'a', 'b')" id="qz-4-a" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">a) Hiding inside a deep hole</button>
+              <button onclick="checkQuiz(4, 'b', 'b')" id="qz-4-b" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">b) Being able to protect oneself by learning to be strong and working hard</button>
+              <button onclick="checkQuiz(4, 'c', 'b')" id="qz-4-c" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">c) Marrying a rich merchant</button>
+            </div>
+            <div id="qz-exp-4" class="hidden text-xs p-2 rounded-lg"></div>
+          </div>
+
+          <!-- Quiz Q5 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-sm text-slate-900">5. According to the daughter rat, when is a person "truly rich"?</div>
+            <div class="space-y-1.5 text-xs sm:text-sm">
+              <button onclick="checkQuiz(5, 'a', 'c')" id="qz-5-a" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">a) When one has a palace of gold</button>
+              <button onclick="checkQuiz(5, 'b', 'c')" id="qz-5-b" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">b) When one rules over others</button>
+              <button onclick="checkQuiz(5, 'c', 'c')" id="qz-5-c" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">c) When one is rich in love and can take care of oneself and loved ones</button>
+            </div>
+            <div id="qz-exp-5" class="hidden text-xs p-2 rounded-lg"></div>
+          </div>
+
+          <!-- Quiz Q6 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="font-bold text-sm text-slate-900">6. What kind of help did the daughter rat ask from her mother?</div>
+            <div class="space-y-1.5 text-xs sm:text-sm">
+              <button onclick="checkQuiz(6, 'a', 'a')" id="qz-6-a" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">a) "Help me support myself (learn to stand on my own feet)."</button>
+              <button onclick="checkQuiz(6, 'b', 'a')" id="qz-6-b" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">b) "Find me a rich groom."</button>
+              <button onclick="checkQuiz(6, 'c', 'a')" id="qz-6-c" class="w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-purple-50">c) "Give me a lot of money."</button>
+            </div>
+            <div id="qz-exp-6" class="hidden text-xs p-2 rounded-lg"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between">
+        <button onclick="switchTab('tab-story')" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-4 py-2.5 rounded-xl">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <button onclick="switchTab('tab-imr')" class="bg-purple-800 hover:bg-purple-900 text-white font-bold px-5 py-2.5 rounded-xl shadow flex items-center gap-2">
+          Next: Study Skills IMR Graph (Pg 120–121) <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- TAB 3: STUDY SKILLS - IMR BAR DIAGRAM & REPORT (PG 120-121)-->
+    <!-- ========================================================== -->
+    <div id="tab-imr" class="tab-panel hidden space-y-6">
+
+      <!-- Interactive IMR Bar Diagram (Page 120) -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-purple-700">Textbook Page 120 • Study Skills I</span>
+            <h3 class="text-lg font-extrabold text-slate-900">Male and Female Infant Mortality Rates (IMR) in India (1990 to 2008)</h3>
+            <p class="text-xs text-slate-500">Source: Ministry of Statistics and Programme Implementation (MOSPI) — Deaths per 1,000 live births</p>
+          </div>
+          <!-- Legend -->
+          <div class="flex items-center gap-3 text-xs font-bold">
+            <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-sky-600 inline-block"></span> Male IMR</span>
+            <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-rose-500 inline-block"></span> Female IMR</span>
+            <span class="flex items-center gap-1.5"><span class="w-3.5 h-3.5 rounded bg-amber-500 inline-block"></span> Total IMR</span>
+          </div>
+        </div>
+
+        <!-- Interactive Bar Chart Container -->
+        <div class="bg-slate-50 p-4 sm:p-6 rounded-2xl border border-slate-200">
+          <div class="grid grid-cols-5 gap-2 sm:gap-6 items-end h-56 pt-6 px-2 border-b-2 border-slate-300">
+            <!-- 1990 -->
+            <div onclick="highlightIMRYear('1990', 78, 81, 80, 3)" class="cursor-pointer group flex flex-col items-center h-full justify-end">
+              <div class="text-[10px] sm:text-xs font-bold text-slate-600 mb-1">78 | 81</div>
+              <div class="w-full flex items-end justify-center gap-1 sm:gap-1.5 h-full">
+                <div class="w-3 sm:w-5 bg-sky-600 rounded-t bar-transition group-hover:brightness-110" style="height: 78%" title="Male: 78"></div>
+                <div class="w-3 sm:w-5 bg-rose-500 rounded-t bar-transition group-hover:brightness-110" style="height: 81%" title="Female: 81"></div>
+                <div class="w-2 sm:w-4 bg-amber-500 rounded-t bar-transition hidden sm:block" style="height: 80%" title="Total: 80"></div>
+              </div>
+            </div>
+
+            <!-- 1995 -->
+            <div onclick="highlightIMRYear('1995', 73, 76, 74, 3)" class="cursor-pointer group flex flex-col items-center h-full justify-end">
+              <div class="text-[10px] sm:text-xs font-bold text-slate-600 mb-1">73 | 76</div>
+              <div class="w-full flex items-end justify-center gap-1 sm:gap-1.5 h-full">
+                <div class="w-3 sm:w-5 bg-sky-600 rounded-t bar-transition group-hover:brightness-110" style="height: 73%" title="Male: 73"></div>
+                <div class="w-3 sm:w-5 bg-rose-500 rounded-t bar-transition group-hover:brightness-110" style="height: 76%" title="Female: 76"></div>
+                <div class="w-2 sm:w-4 bg-amber-500 rounded-t bar-transition hidden sm:block" style="height: 74%" title="Total: 74"></div>
+              </div>
+            </div>
+
+            <!-- 2000 -->
+            <div onclick="highlightIMRYear('2000', 67, 69, 68, 2)" class="cursor-pointer group flex flex-col items-center h-full justify-end">
+              <div class="text-[10px] sm:text-xs font-bold text-slate-600 mb-1">67 | 69</div>
+              <div class="w-full flex items-end justify-center gap-1 sm:gap-1.5 h-full">
+                <div class="w-3 sm:w-5 bg-sky-600 rounded-t bar-transition group-hover:brightness-110" style="height: 67%" title="Male: 67"></div>
+                <div class="w-3 sm:w-5 bg-rose-500 rounded-t bar-transition group-hover:brightness-110" style="height: 69%" title="Female: 69"></div>
+                <div class="w-2 sm:w-4 bg-amber-500 rounded-t bar-transition hidden sm:block" style="height: 68%" title="Total: 68"></div>
+              </div>
+            </div>
+
+            <!-- 2005 (Highest Gap = 5) -->
+            <div onclick="highlightIMRYear('2005', 56, 61, 58, 5)" class="cursor-pointer group flex flex-col items-center h-full justify-end">
+              <span class="bg-rose-600 text-white text-[9px] font-extrabold px-1.5 py-0.5 rounded-full mb-0.5 animate-bounce">Max Gap: 5</span>
+              <div class="text-[10px] sm:text-xs font-extrabold text-rose-700 mb-1">56 | 61</div>
+              <div class="w-full flex items-end justify-center gap-1 sm:gap-1.5 h-full">
+                <div class="w-3 sm:w-5 bg-sky-600 rounded-t bar-transition ring-2 ring-rose-400" style="height: 56%" title="Male: 56"></div>
+                <div class="w-3 sm:w-5 bg-rose-500 rounded-t bar-transition ring-2 ring-rose-400" style="height: 61%" title="Female: 61"></div>
+                <div class="w-2 sm:w-4 bg-amber-500 rounded-t bar-transition hidden sm:block" style="height: 58%" title="Total: 58"></div>
+              </div>
+            </div>
+
+            <!-- 2008 -->
+            <div onclick="highlightIMRYear('2008', 52, 55, 53, 3)" class="cursor-pointer group flex flex-col items-center h-full justify-end">
+              <div class="text-[10px] sm:text-xs font-bold text-slate-600 mb-1">52 | 55</div>
+              <div class="w-full flex items-end justify-center gap-1 sm:gap-1.5 h-full">
+                <div class="w-3 sm:w-5 bg-sky-600 rounded-t bar-transition group-hover:brightness-110" style="height: 52%" title="Male: 52"></div>
+                <div class="w-3 sm:w-5 bg-rose-500 rounded-t bar-transition group-hover:brightness-110" style="height: 55%" title="Female: 55"></div>
+                <div class="w-2 sm:w-4 bg-amber-500 rounded-t bar-transition hidden sm:block" style="height: 53%" title="Total: 53"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- X-Axis Labels -->
+          <div class="grid grid-cols-5 gap-2 sm:gap-6 text-center pt-2 text-xs sm:text-sm font-extrabold text-slate-800">
+            <div>1990</div>
+            <div>1995</div>
+            <div>2000</div>
+            <div class="text-rose-700">2005 ★</div>
+            <div>2008</div>
+          </div>
+
+          <!-- Interactive Year Inspector Bar -->
+          <div id="imrInspector" class="mt-4 p-3 rounded-xl bg-white border border-purple-200 flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm">
+            <div class="font-bold text-purple-950">
+              📊 <strong>Selected Year: 2005</strong> — Male IMR: <span class="text-sky-700 font-extrabold">56</span> | Female IMR: <span class="text-rose-600 font-extrabold">61</span> | Total: <strong>58</strong>
+            </div>
+            <div class="bg-rose-100 text-rose-900 font-extrabold px-3 py-1 rounded-lg">
+              Difference (Female − Male) = 5 (Highest Gap, & sharpest drop from 2000!)
+            </div>
+          </div>
+        </div>
+
+        <!-- All 7 Study Skills Questions & Answers (Pages 120–121) -->
+        <div class="space-y-3 pt-2">
+          <h4 class="font-extrabold text-base text-slate-900">I. Answers to the 7 Bar Diagram Questions (Pages 120–121):</h4>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">1. In which year is the difference in infant mortality rates between male and female the highest?</div>
+              <p class="text-emerald-900 font-medium"><strong>Ans:</strong> In the year <strong>2005</strong>, the difference between female IMR (61) and male IMR (56) is the highest (a difference of <strong>5 points</strong>).</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">2. In which case and in which year do we find a sudden decrease in the IMR?</div>
+              <p class="text-emerald-900 font-medium"><strong>Ans:</strong> In the year <strong>2005</strong> (between 2000 and 2005), we find a sudden, sharp decrease in <strong>both Male and Female IMR</strong> (Male IMR dropped by 11 points from 67 to 56, and Female IMR dropped by 8 points from 69 to 61).</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">3. What will happen if there is a wide gap in IMR between male and female?</div>
+              <p class="text-emerald-900 font-medium"><strong>Ans:</strong> If there is a wide gap in IMR between male and female, the number of girls in society will decrease sharply, leading to an <strong>imbalanced sex ratio</strong> and serious social problems.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">4. What, according to you, may the reasons be for the female IMR being higher than the male IMR?</div>
+              <p class="text-emerald-900 font-medium"><strong>Ans:</strong> Gender discrimination, preference for male children, neglect of girl infants' nutrition and medical care, and superstitions viewing girls as a financial burden.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">5. What may the reasons be for the decrease in IMR over the years?</div>
+              <p class="text-emerald-900 font-medium"><strong>Ans:</strong> Improved medical and healthcare facilities, pulse polio and vaccination drives, better maternal nutrition, institutional deliveries, and growing literacy and awareness among parents.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">6. Do you think there could be a further decrease in the IMR after 5 years?</div>
+              <p class="text-emerald-900 font-medium"><strong>Ans:</strong> <strong>Yes</strong>, definitely. With advanced healthcare programs, 108/102 ambulance services, government nutrition schemes, and women's education, IMR will decrease further.</p>
+            </div>
+
+            <div class="md:col-span-2 p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+              <div class="font-bold text-slate-900">7. What, according to you, may the reasons be for the death of more than half of both male and female infants?</div>
+              <p class="text-emerald-900 font-medium"><strong>Ans:</strong> Malnutrition among pregnant mothers, premature births, lack of clean drinking water and sanitation, poverty, illiteracy, and lack of timely hospital care in remote rural areas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- II. Group Work: Analytical Report on IMR in India (Page 121) -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-purple-700">Page 121 • Study Skills II (Group Work)</span>
+            <h3 class="text-lg font-extrabold text-slate-900">Analytical Report on the Infant Mortality Rates (IMR) in India</h3>
+          </div>
+          <button onclick="speakText(document.getElementById('imr-report-text').innerText)" class="bg-purple-800 hover:bg-purple-900 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+            <i class="fa-solid fa-volume-high"></i> Listen to Report
+          </button>
+        </div>
+
+        <div id="imr-report-text" class="p-4 sm:p-5 rounded-xl bg-amber-50/70 border border-amber-200 text-xs sm:text-sm leading-relaxed space-y-2.5 text-slate-800">
+          <div class="font-extrabold text-base text-amber-950 uppercase tracking-wide text-center underline">
+            Analytical Report: Trends in Infant Mortality Rates (IMR) in India (1990–2008)
+          </div>
+          <p>
+            <strong>1. Introduction:</strong> The bar diagram provided by the Ministry of Statistics and Programme Implementation (MOSPI) illustrates the Infant Mortality Rates (IMR) of male and female infants in India over an 18-year period from 1990 to 2008.
+          </p>
+          <p>
+            <strong>2. Key Observations & Data Trends:</strong>
+            In 1990, the IMR was alarmingly high at 78 for males and 81 for females (80 overall). Over the years, there has been a steady decline: in 1995 (Male 73, Female 76) and in 2000 (Male 67, Female 69). A <strong>sudden and significant drop</strong> occurred between 2000 and 2005, where Male IMR fell to 56 and Female IMR to 61. By 2008, it further decreased to 52 for males and 55 for females.
+          </p>
+          <p>
+            <strong>3. Gender Disparity (Higher Female IMR):</strong>
+            Throughout all the recorded years from 1990 to 2008, the female IMR has remained consistently higher than the male IMR, with the highest gap of 5 points recorded in 2005. This reflects deep-rooted gender bias, where girl infants often receive less nutrition and medical attention compared to boys.
+          </p>
+          <p>
+            <strong>4. Conclusion & Recommendations:</strong>
+            While better vaccination, healthcare, and literacy have successfully reduced IMR from 80 (in 1990) to 53 (in 2008), the survival gap between boy and girl infants must be eliminated through strict awareness campaigns, maternal nutrition schemes, and equal care for the girl child.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex justify-between">
+        <button onclick="switchTab('tab-comp')" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-4 py-2.5 rounded-xl">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <button onclick="switchTab('tab-oral')" class="bg-purple-800 hover:bg-purple-900 text-white font-bold px-5 py-2.5 rounded-xl shadow flex items-center gap-2">
+          Next: Page 121 Oral Activity (Debate & Opinions) <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- TAB 4: ORAL ACTIVITY - DEBATE & OPINIONS (PAGE 121)        -->
+    <!-- ========================================================== -->
+    <div id="tab-oral" class="tab-panel hidden space-y-6">
+
+      <!-- Oral Activity A: Debate on Reservation for Women (Page 121) -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-purple-700">Page 121 • Oral Activity A (Debate)</span>
+            <h3 class="text-lg font-extrabold text-slate-900">Debate: “Reservation in education, employment and legislature will empower the women.”</h3>
+          </div>
+          <button onclick="speakText(document.getElementById('debate-res-box').innerText)" class="bg-purple-800 hover:bg-purple-900 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow flex items-center gap-1.5">
+            <i class="fa-solid fa-volume-high"></i> Listen to Both Sides
+          </button>
+        </div>
+
+        <div id="debate-res-box" class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <!-- FOR the Motion -->
+          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 space-y-2">
+            <div class="font-extrabold text-emerald-900 text-sm flex items-center gap-2">
+              <i class="fa-solid fa-thumbs-up"></i> FOR the Motion (అనుకూలంగా వాదనలు)
+            </div>
+            <ul class="space-y-2 list-disc list-inside text-slate-800">
+              <li><strong>Historical Justice:</strong> For centuries, women were denied equal access to schooling and jobs (like Akkayya in <em>Bonsai Life</em>). Reservation provides a fair starting line.</li>
+              <li><strong>Financial Independence:</strong> Reservation in colleges and government jobs ensures women earn their own livelihood and live with dignity.</li>
+              <li><strong>Voice in Law-Making (Legislature):</strong> When women have reserved seats in Parliament, Assemblies, and Panchayats, laws protecting women, children, health, and education are prioritized.</li>
+              <li><strong>Role Models:</strong> Seeing women as doctors, officers, and leaders inspires rural parents to educate their daughters.</li>
+            </ul>
+          </div>
+
+          <!-- AGAINST the Motion -->
+          <div class="p-4 rounded-xl bg-rose-50 border border-rose-200 space-y-2">
+            <div class="font-extrabold text-rose-900 text-sm flex items-center gap-2">
+              <i class="fa-solid fa-scale-balanced"></i> Counter-Perspective / Challenges (వ్యతిరేక / ప్రత్యామ్నాయ వాదనలు)
+            </div>
+            <ul class="space-y-2 list-disc list-inside text-slate-800">
+              <li><strong>Grassroots Education First:</strong> Reservation at higher levels helps only if girls first receive quality primary and secondary schooling without dropping out.</li>
+              <li><strong>Change in Mindset Needed:</strong> True empowerment requires changing patriarchal attitudes at home so women can make independent decisions, not just hold nominal posts.</li>
+              <li><strong>Merit & Equal Capability:</strong> Women are equally intelligent and capable of excelling in any field on their own merit when given equal encouragement and safety.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oral Activity B: Give Your Opinion on 4 Statements (Page 121) -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-4">
+        <div class="border-b border-slate-100 pb-3">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-purple-700">Page 121 • Oral Activity B</span>
+          <h3 class="text-lg font-extrabold text-slate-900">B. Give Your Opinion on the 4 Statements & Discuss with Classmates</h3>
+          <p class="text-xs text-slate-500">Vote Agree/Disagree on each statement and read the ready-to-speak classroom opinion!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Statement 1 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div class="font-extrabold text-sm text-slate-900">1. “Interest in music, dance and sports distract from studies.”</div>
+            <div class="flex gap-2">
+              <button onclick="voteOpinion(1, 'Disagree')" class="px-3 py-1 rounded-lg bg-rose-600 text-white text-xs font-bold">✗ I Disagree (Recommended)</button>
+              <button onclick="speakText(document.getElementById('op-1').innerText)" class="px-2.5 py-1 rounded-lg bg-slate-200 text-slate-700 text-xs font-bold"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+            <p id="op-1" class="text-xs sm:text-sm text-slate-700 bg-white p-3 rounded-lg border border-slate-200">
+              <strong>Model Opinion (Disagree):</strong> I strongly disagree. Music, dance, and sports do not distract from studies; instead, they refresh our mind, reduce stress, build discipline, and promote all-round development. Many great achievers excel in both academics and arts/sports!
+            </p>
+          </div>
+
+          <!-- Statement 2 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div class="font-extrabold text-sm text-slate-900">2. “One should not be punished for telling the truth.”</div>
+            <div class="flex gap-2">
+              <button onclick="voteOpinion(2, 'Agree')" class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-xs font-bold">✓ I Agree (Recommended)</button>
+              <button onclick="speakText(document.getElementById('op-2').innerText)" class="px-2.5 py-1 rounded-lg bg-slate-200 text-slate-700 text-xs font-bold"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+            <p id="op-2" class="text-xs sm:text-sm text-slate-700 bg-white p-3 rounded-lg border border-slate-200">
+              <strong>Model Opinion (Agree):</strong> I completely agree. Telling the truth requires honesty and courage. If children are punished when they admit a mistake truthfully, they may start lying out of fear. Instead, honesty should be appreciated and guided gently.
+            </p>
+          </div>
+
+          <!-- Statement 3 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div class="font-extrabold text-sm text-slate-900">3. “When an older person says something, we should blindly obey.”</div>
+            <div class="flex gap-2">
+              <button onclick="voteOpinion(3, 'Disagree')" class="px-3 py-1 rounded-lg bg-rose-600 text-white text-xs font-bold">✗ I Disagree (Recommended)</button>
+              <button onclick="speakText(document.getElementById('op-3').innerText)" class="px-2.5 py-1 rounded-lg bg-slate-200 text-slate-700 text-xs font-bold"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+            <p id="op-3" class="text-xs sm:text-sm text-slate-700 bg-white p-3 rounded-lg border border-slate-200">
+              <strong>Model Opinion (Disagree):</strong> While we must always respect our elders and value their experience, we should not obey blindly. Just like the daughter rat who politely questioned her mother, we should think rationally, ask respectful questions, and never obey anything that is wrong or unsafe.
+            </p>
+          </div>
+
+          <!-- Statement 4 -->
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5">
+            <div class="font-extrabold text-sm text-slate-900">4. “It is wrong for actors to model for cigarettes and fairness creams.”</div>
+            <div class="flex gap-2">
+              <button onclick="voteOpinion(4, 'Agree')" class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-xs font-bold">✓ I Agree (Recommended)</button>
+              <button onclick="speakText(document.getElementById('op-4').innerText)" class="px-2.5 py-1 rounded-lg bg-slate-200 text-slate-700 text-xs font-bold"><i class="fa-solid fa-volume-high"></i></button>
+            </div>
+            <p id="op-4" class="text-xs sm:text-sm text-slate-700 bg-white p-3 rounded-lg border border-slate-200">
+              <strong>Model Opinion (Agree):</strong> I strongly agree. Youth and children look up to actors as role models. Promoting cigarettes harms public health and causes cancer, while fairness cream ads create a false inferiority complex based on skin colour. True beauty lies in character and health, not skin tone.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-between">
+        <button onclick="switchTab('tab-imr')" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-4 py-2.5 rounded-xl">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <button onclick="switchTab('tab-project')" class="bg-purple-800 hover:bg-purple-900 text-white font-bold px-5 py-2.5 rounded-xl shadow flex items-center gap-2">
+          Next: Project Work & Safety Rules (Pg 121–122) <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- TAB 5: PROJECT WORK & PERSONAL SAFETY RULES (PG 121–122)   -->
+    <!-- ========================================================== -->
+    <div id="tab-project" class="tab-panel hidden space-y-6">
+
+      <!-- Project Work A, B & C (Page 121) -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-5">
+        <div class="border-b border-slate-100 pb-3">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-purple-700">Page 121 • Project Work (A, B & C)</span>
+          <h3 class="text-lg font-extrabold text-slate-900">Interview Female Members in Family & Neighbourhood on Women Empowerment</h3>
+        </div>
+
+        <!-- Part A: Yes / No Reasons -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-emerald-50 border border-emerald-200 space-y-1.5">
+            <div class="font-extrabold text-emerald-950">A. Would you like girls in the family to take up a job after education? — If YES, Reasons:</div>
+            <ul class="list-disc list-inside text-slate-800 space-y-1">
+              <li>It gives girls financial independence and self-confidence.</li>
+              <li>They can support their parents and family during tough times.</li>
+              <li>They earn respect and dignity in society without begging anyone for small needs.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 space-y-1.5">
+            <div class="font-extrabold text-amber-950">If NO (Traditional / Older Hesitations), Reasons:</div>
+            <ul class="list-disc list-inside text-slate-800 space-y-1">
+              <li>Managing both household work and office duties becomes an uphill task.</li>
+              <li>Concerns about workplace distance, late hours, or safety while commuting.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Part B: Interview Table + Add Your Own Row -->
+        <div class="space-y-3">
+          <div class="font-extrabold text-sm sm:text-base text-slate-900">B. Completed Sample Interview Table (Page 121):</div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-purple-900 text-white">
+                  <th class="p-2.5 rounded-tl-xl">Sl.No.</th>
+                  <th class="p-2.5">Name & Background</th>
+                  <th class="p-2.5">Working</th>
+                  <th class="p-2.5">Not Working</th>
+                  <th class="p-2.5 rounded-tr-xl">Opinion on Girls Taking Up a Job</th>
+                </tr>
+              </thead>
+              <tbody id="projectTableBody" class="divide-y divide-slate-200">
+                <tr>
+                  <td class="p-2.5 font-bold">1.</td>
+                  <td class="p-2.5"><strong>Smt. Padma</strong> (Educated, Married)</td>
+                  <td class="p-2.5 text-emerald-700 font-bold">✓ Yes (Teacher)</td>
+                  <td class="p-2.5 text-slate-400">—</td>
+                  <td class="p-2.5">Yes, a job gives women self-respect, financial security, and equality.</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold">2.</td>
+                  <td class="p-2.5"><strong>Smt. Lakshmi</strong> (Uneducated, Married)</td>
+                  <td class="p-2.5 text-slate-400">—</td>
+                  <td class="p-2.5 text-amber-700 font-bold">✓ Homemaker</td>
+                  <td class="p-2.5">Yes! I suffered without education. Every girl must study and get a job.</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold">3.</td>
+                  <td class="p-2.5"><strong>Kum. Divya</strong> (Educated, Unmarried)</td>
+                  <td class="p-2.5 text-emerald-700 font-bold">✓ Yes (Nurse)</td>
+                  <td class="p-2.5 text-slate-400">—</td>
+                  <td class="p-2.5">Yes, earning our own income helps us support our parents proudly.</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold">4.</td>
+                  <td class="p-2.5"><strong>Smt. Saroja</strong> (Educated, Married)</td>
+                  <td class="p-2.5 text-slate-400">—</td>
+                  <td class="p-2.5 text-amber-700 font-bold">✓ Homemaker</td>
+                  <td class="p-2.5">Yes, educated girls should put their knowledge to good use in society.</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold">5.</td>
+                  <td class="p-2.5"><strong>Smt.Kamalamma</strong> (Uneducated, Widow)</td>
+                  <td class="p-2.5 text-emerald-700 font-bold">✓ Yes (Tailor)</td>
+                  <td class="p-2.5 text-slate-400">—</td>
+                  <td class="p-2.5">Yes, having a skill or job protects a woman during unexpected crises.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Add Custom Interview Entry -->
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center gap-2">
+            <input id="newIntName" type="text" placeholder="Name (e.g. Smt.ita, Educated)" class="flex-1 min-w-[160px] rounded-lg border border-slate-300 px-3 py-1.5 text-xs" />
+            <select id="newIntStatus" class="rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs bg-white">
+              <option value="Working">Working</option>
+              <option value="Not Working">Not Working</option>
+            </select>
+            <input id="newIntOpinion" type="text" placeholder="Their opinion on girls' jobs..." class="flex-1 min-w-[180px] rounded-lg border border-slate-300 px-3 py-1.5 text-xs" />
+            <button onclick="addInterviewRow()" class="bg-purple-800 hover:bg-purple-900 text-white text-xs font-bold px-3.5 py-1.5 rounded-lg">
+              <i class="fa-solid fa-plus"></i> Add to Table
+            </button>
+          </div>
+        </div>
+
+        <!-- Part C: Model Report on Women Empowerment -->
+        <div class="p-4 rounded-xl bg-purple-50 border border-purple-200 space-y-2 text-xs sm:text-sm">
+          <div class="flex items-center justify-between">
+            <span class="font-extrabold text-purple-950">C. Model Report on ‘Women Empowerment’ (Based on Interviews):</span>
+            <button onclick="speakText(document.getElementById('proj-report-c').innerText)" class="text-purple-800 text-xs font-bold"><i class="fa-solid fa-volume-high"></i> Listen</button>
+          </div>
+          <p id="proj-report-c" class="text-slate-800 leading-relaxed">
+            <strong>Report on Women Empowerment:</strong> We interviewed five women from our family and neighbourhood comprising both educated and uneducated, working women and homemakers. All the women unanimously expressed that girls must be given higher education and encouraged to take up jobs. While working women shared how their jobs gave them confidence and financial security, homemakers like Smt. Lakshmi emphasized that they want their daughters to study and work so they never have to depend on others for every rupee. In conclusion, education and employment are the two wings of true Women Empowerment.
+          </p>
+        </div>
+      </div>
+
+      <!-- Page 122: Personal Body Safety Rules (POCSO Act 2012 Awareness) -->
+      <div class="bg-gradient-to-br from-teal-900 via-emerald-900 to-slate-900 text-white rounded-2xl p-5 sm:p-6 shadow-lg border border-teal-400/40 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center text-xl font-extrabold shrink-0">
+            <i class="fa-solid fa-user-shield"></i>
+          </div>
+          <div>
+            <span class="text-xs uppercase tracking-wider text-amber-300 font-bold">Textbook Page 122 • Life Skills & Child Protection</span>
+            <h3 class="text-lg font-extrabold">Personal Body Safety Rules (NO – GO – TELL)</h3>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs sm:text-sm">
+          <div class="bg-white/10 p-3.5 rounded-xl border border-white/15">
+            <div class="font-extrabold text-amber-300 mb-1">1. Clothing Rules</div>
+            <p class="text-emerald-50">We keep private parts covered in front of others. Though we don’t cover our mouth, it is private too.</p>
+          </div>
+          <div class="bg-white/10 p-3.5 rounded-xl border border-white/15">
+            <div class="font-extrabold text-amber-300 mb-1">2. Touching Rules</div>
+            <p class="text-emerald-50">We don’t touch private parts in front of others, and no one should touch ours.</p>
+          </div>
+          <div class="bg-white/10 p-3.5 rounded-xl border border-white/15">
+            <div class="font-extrabold text-amber-300 mb-1">3. Talking Rules</div>
+            <p class="text-emerald-50">We talk openly about safety and private parts with Safe Adults (parents/trusted teachers).</p>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-rose-500/20 border border-rose-300/40 text-xs sm:text-sm space-y-1.5">
+          <div class="font-extrabold text-amber-300">🚨 What to do if someone breaks Personal Body Safety Rules?</div>
+          <p>
+            1. Say <strong>‘NO’</strong> firmly to that person &nbsp;|&nbsp;
+            2. <strong>GO</strong> away from that person immediately &nbsp;|&nbsp;
+            3. <strong>TELL</strong> a Safe Adult (or call Childline <strong>1098</strong>) because that person is doing something unsafe and must be stopped.
+          </p>
+          <p class="text-emerald-200 text-xs pt-1">
+            <em>Remember: Shame and blame are NEVER in the victim's body. Those who trouble children are the ones to be blamed and punished under the law (<strong>POCSO Act 2012</strong>).</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- Page 122: Self-Assessment Checklist -->
+      <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm space-y-4">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-purple-700">Textbook Page 122 • Self Assessment</span>
+        <h3 class="text-lg font-extrabold text-slate-900">How well have I understood this unit? (Tick ✓)</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm">
+          <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer">
+            <input type="checkbox" checked class="w-4 h-4 accent-purple-700 rounded" />
+            <span>I read and understood <strong>A. Bonsai Life I, B. Bonsai Life II, C. I Can Take Care of Myself</strong></span>
+          </label>
+          <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer">
+            <input type="checkbox" checked class="w-4 h-4 accent-purple-700 rounded" />
+            <span>I was able to interpret the <strong>IMR Bar Diagram</strong> and write an analytical report.</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer">
+            <input type="checkbox" checked class="w-4 h-4 accent-purple-700 rounded" />
+            <span>I was able to participate in the <strong>Debate & Oral Activity</strong> on Women Empowerment.</span>
+          </label>
+          <label class="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-200 cursor-pointer">
+            <input type="checkbox" checked class="w-4 h-4 accent-purple-700 rounded" />
+            <span>I was able to complete the <strong>Neighbourhood Women Interview Project</strong>.</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="flex justify-between">
+        <button onclick="switchTab('tab-oral')" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-4 py-2.5 rounded-xl">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <button onclick="switchTab('tab-report')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-5 py-2.5 rounded-xl shadow flex items-center gap-2">
+          Final Step: Submit Watch Report <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- TAB 6: SUBMIT STUDENT WATCH & STUDY REPORT                 -->
+    <!-- ========================================================== -->
+    <div id="tab-report" class="tab-panel hidden space-y-6">
+      <section class="bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 text-white rounded-3xl p-5 sm:p-8 shadow-2xl border-2 border-amber-400/60 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/15 pb-4">
+          <div>
+            <span class="bg-amber-400 text-slate-950 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+              <i class="fa-solid fa-user-check"></i> Student Lesson & Screen-Time Report (Pages 118–122)
+            </span>
+            <h2 class="text-xl sm:text-2xl font-extrabold mt-2">
+              Submit Your Watching & Exercise Report
+            </h2>
+            <p class="text-xs sm:text-sm text-purple-200 mt-1">
+              Your active screen time, quiz score, and reflection on <em>"I Can Take Care of Myself"</em> will be sent directly to your teacher at <strong>balaswamysm@gmail.com</strong>.
+            </p>
+          </div>
+
+          <!-- Live Telemetry Summary -->
+          <div class="grid grid-cols-3 gap-2 bg-white/10 p-3 rounded-2xl border border-white/15 text-center shrink-0">
+            <div class="px-2">
+              <div class="text-[10px] uppercase text-purple-200 font-bold">Watch Time</div>
+              <div id="reportTimerDisplay" class="text-base sm:text-lg font-mono font-extrabold text-amber-300">00:00</div>
+            </div>
+            <div class="px-2 border-x border-white/15">
+              <div class="text-[10px] uppercase text-purple-200 font-bold">Tabs Read</div>
+              <div id="tabsVisitedDisplay" class="text-base sm:text-lg font-extrabold text-white">1 / 6</div>
+            </div>
+            <div class="px-2">
+              <div class="text-[10px] uppercase text-purple-200 font-bold">Quiz Score</div>
+              <div id="reportScoreDisplay" class="text-base sm:text-lg font-extrabold text-emerald-300">0 / 30</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HTML Form connected to Formspree (https://formspree.io/f/xvkkvebj) -->
+        <form id="studentReportForm" action="https://formspree.io/f/xvkkvebj" method="POST" class="space-y-4">
+          <input type="hidden" name="_subject" id="formSubject" value="Class 8 Unit 7C (Pg 118-122) Student Watch Report" />
+          <input type="hidden" name="teacher_email" value="balaswamysm@gmail.com" />
+          <input type="hidden" name="lesson_unit" value="Class 8 English - Unit 7C: I Can Take Care of Myself (Pages 118 to 122)" />
+          <input type="hidden" name="total_screen_time_formatted" id="hiddenScreenTime" value="0m 0s" />
+          <input type="hidden" name="total_screen_time_seconds" id="hiddenScreenSeconds" value="0" />
+          <input type="hidden" name="quiz_score" id="hiddenScore" value="0 / 30" />
+          <input type="hidden" name="sections_visited" id="hiddenSectionsVisited" value="1. Story & Guide" />
+          <input type="hidden" name="submission_timestamp" id="hiddenTimestamp" value="" />
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-purple-200 mb-1">Student Full Name *</label>
+              <input type="text" name="student_name" id="studentName" required placeholder="Enter your full name" class="w-full rounded-xl bg-white/95 text-slate-900 px-3.5 py-2.5 text-sm font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-purple-200 mb-1">Roll Number / Admission No. *</label>
+              <input type="text" name="roll_number" id="rollNumber" required placeholder="e.g., 18" class="w-full rounded-xl bg-white/95 text-slate-900 px-3.5 py-2.5 text-sm font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-purple-200 mb-1">Class & Section *</label>
+              <input type="text" name="class_section" id="classSection" required value="Class 8" placeholder="Class 8 - Section A" class="w-full rounded-xl bg-white/95 text-slate-900 px-3.5 py-2.5 text-sm font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-purple-200 mb-1">School Name</label>
+              <input type="text" name="school_name" id="schoolName" placeholder="Enter your School Name" class="w-full rounded-xl bg-white/95 text-slate-900 px-3.5 py-2.5 text-sm font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-purple-200 mb-1">Student / Parent Contact (Optional)</label>
+              <input type="text" name="contact_info" id="contactInfo" placeholder="Mobile number or email" class="w-full rounded-xl bg-white/95 text-slate-900 px-3.5 py-2.5 text-sm font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-purple-200 mb-1">Your Key Takeaway from "I Can Take Care of Myself" *</label>
+            <textarea name="student_reflection" id="studentReflection" rows="2" required placeholder="e.g., I learned from the daughter rat that the best protection is learning to stand on my own feet through education and hard work." class="w-full rounded-xl bg-white/95 text-slate-900 p-3 text-sm font-medium focus:ring-2 focus:ring-amber-400 focus:outline-none"></textarea>
+          </div>
+
+          <div id="formStatusBox" class="hidden p-4 rounded-xl text-sm font-bold"></div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <div class="text-xs text-purple-200 flex items-center gap-1.5">
+              <i class="fa-solid fa-envelope-circle-check text-amber-300"></i>
+              Report sent to: <span class="underline font-semibold">balaswamysm@gmail.com</span>
+            </div>
+
+            <button type="submit" id="submitReportBtn" class="w-full sm:w-auto bg-amber-400 hover:bg-amber-300 active:scale-95 text-slate-950 font-extrabold text-sm sm:text-base px-6 py-3 rounded-xl shadow-lg flex items-center justify-center gap-2 transition">
+              <i class="fa-solid fa-paper-plane"></i> Submit Watching & Exercise Report
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- VOCABULARY POPUP MODAL -->
+  <div id="wordModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-purple-200 space-y-3 text-center">
+      <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto text-xl">
+        <i class="fa-solid fa-book-open-reader"></i>
+      </div>
+      <h4 id="modalWordTitle" class="text-lg font-extrabold text-purple-950">Word</h4>
+      <p id="modalWordMeaning" class="text-sm text-slate-700 leading-relaxed">Meaning</p>
+      <div class="flex justify-center gap-2 pt-2">
+        <button id="modalSpeakBtn" class="bg-purple-800 text-white text-xs font-bold px-4 py-2 rounded-xl">
+          <i class="fa-solid fa-volume-high"></i> Pronounce
+        </button>
+        <button onclick="closeWordModal()" class="bg-slate-200 text-slate-800 text-xs font-bold px-4 py-2 rounded-xl">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // ==========================================
+    // 1. LIVE SCREEN TIME / WATCH TIMER
+    // ==========================================
+    let activeSeconds = 0;
+    let isPageActive = true;
+    const visitedTabs = new Set(['tab-story']);
+    let currentScore = 0;
+    const answeredItems = new Set();
+
+    document.addEventListener('visibilitychange', () => {
+      isPageActive = !document.hidden;
+    });
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    setInterval(() => {
+      if (isPageActive) {
+        activeSeconds++;
+        const formatted = formatTime(activeSeconds);
+        document.getElementById('headerTimer').innerText = formatted;
+        document.getElementById('reportTimerDisplay').innerText = formatted;
+        document.getElementById('hiddenScreenTime').value = `${Math.floor(activeSeconds / 60)}m ${activeSeconds % 60}s (${formatted})`;
+        document.getElementById('hiddenScreenSeconds').value = activeSeconds;
+      }
+    }, 1000);
+
+    // ==========================================
+    // 2. TAB NAVIGATION & PROGRESS TRACKER
+    // ==========================================
+    const tabLabels = {
+      'tab-story': '1. Story & Guide (Pg 118-119)',
+      'tab-comp': '2. Comprehension & Quiz (Pg 120)',
+      'tab-imr': '3. Study Skills IMR Graph (Pg 120-121)',
+      'tab-oral': '4. Debate & Opinions (Pg 121)',
+      'tab-project': '5. Project & Safety Rules (Pg 121-122)',
+      'tab-report': '6. Submit Report'
+    };
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.className = 'tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-purple-100 flex items-center gap-1.5 transition';
+      });
+      const activeBtn = document.getElementById('btn-' + tabId);
+      if (activeBtn) {
+        activeBtn.className = 'tab-btn whitespace-nowrap px-3.5 py-1.5 rounded-lg bg-white text-purple-950 font-extrabold shadow-sm flex items-center gap-1.5 transition';
+      }
+
+      visitedTabs.add(tabId);
+      updateProgressUI();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateProgressUI() {
+      const count = visitedTabs.size;
+      document.getElementById('tabsVisitedDisplay').innerText = `${count} / 6`;
+      const pct = Math.min(100, Math.round((count / 6) * 50 + (currentScore / 30) * 50));
+      document.getElementById('overallProgress').style.width = `${pct}%`;
+      document.getElementById('hiddenSectionsVisited').value = Array.from(visitedTabs).map(t => tabLabels[t] || t).join(', ');
+    }
+
+    function addScore(key, pts) {
+      if (!answeredItems.has(key)) {
+        answeredItems.add(key);
+        currentScore = Math.min(30, currentScore + pts);
+        document.getElementById('scoreDisplay').innerText = currentScore;
+        document.getElementById('reportScoreDisplay').innerText = `${currentScore} / 30`;
+        document.getElementById('hiddenScore').value = `${currentScore} / 30`;
+        updateProgressUI();
+      }
+    }
+
+    // ==========================================
+    // 3. INTERACTIVE CHAIN OF POWER (TAB 1)
+    // ==========================================
+    const chainData = {
+      1: {
+        title: "☀️ Step 1: Mother Rat asks the Bright Sun God",
+        en: "<strong>Why Mother Rat chose him:</strong> All living beings depend on the sun.<br/><strong>Sun God's reply:</strong> 'No, there is someone greater than me to help the creatures — it is the <strong>Rain</strong>. Without the rain, no crop or tree would grow.'",
+        te: "తెలుగు వివరణ: సూర్యుడు అందరికీ వెలుగునిస్తాడు కాబట్టి ఆయనే గొప్పవాడని తల్లి ఎలుక అనుకుంటుంది. కానీ సూర్యుడు తనకంటే పంటలను పెంచే వర్షమే గొప్పదని చెప్తాడు."
+      },
+      2: {
+        title: "🌧️ Step 2: Mother Rat asks the Rain God",
+        en: "<strong>Why Mother Rat chose him:</strong> Rain makes the whole land green and makes rivers flow.<br/><strong>Rain God's reply:</strong> 'No, the <strong>Mountain</strong> is greater than me! Without the mountain, there would be no protection. It blocks the clouds and lets water flow safely into the valleys.'",
+        te: "తెలుగు వివరణ: భూమిని పచ్చగా చేసే వర్షదేవుడిని అడిగితే, మేఘాలను ఆపి నీటిని లోయల్లోకి సురక్షితంగా పంపే పర్వతరాజే (కొండ) తనకంటే గొప్పవాడని చెప్తాడు."
+      },
+      3: {
+        title: "⛰️ Step 3: Mother Rat asks the Blue Mountain God",
+        en: "<strong>Why Mother Rat chose him:</strong> The mountain is big, strong, and withstands all winds and storms.<br/><strong>Mountain God's reply:</strong> 'No, the <strong>Earthworm</strong> is greater than me! Without the worm, the earth would be hard and nothing would grow in the soil.'",
+        te: "తెలుగు వివరణ: గాలివానలను తట్టుకునే పర్వతరాజును అడిగితే, నేలను గుల్లబరిచి మొక్కలు పెరగడానికి సహాయపడే వానపామే (Earthworm) తనకంటే గొప్పదని చెప్తాడు."
+      },
+      4: {
+        title: "🪱 Step 4: The Humble Earthworm — Friend of Living Beings",
+        en: "<strong>Lesson from Nature:</strong> Even a giant mountain admits that a tiny, hardworking earthworm is the greatest friend that living beings can have because it works tirelessly in the soil.",
+        te: "తెలుగు వివరణ: ఆకారంలో చిన్నదైనా తన కష్టంతో నేలను సారవంతం చేసే వానపామే ప్రాణులన్నింటికీ గొప్ప స్నేహితుడు."
+      },
+      5: {
+        title: "🐭✨ Step 5: Daughter Rat’s Wisdom — Power Within Oneself!",
+        en: "<strong>Daughter Rat's Message:</strong> 'Why would I need to marry to be safe? The best protection is to be able to protect oneself. I will learn to stand on my own feet and work hard. One has to depend on the power within oneself!'",
+        te: "తెలుగు వివరణ: ఎవరిపైనో ఆధారపడటం కంటే చదువుకొని, కష్టపడి పనిచేస్తూ మన సొంత కాళ్లపై మనం నిలబడటమే నిజమైన శక్తి, భద్రత అని కూతురు ఎలుక నిరూపిస్తుంది!"
+      }
+    };
+
+    function showChainStep(step) {
+      const d = chainData[step];
+      document.getElementById('chainDetailBox').querySelector('span').innerHTML = d.title;
+      document.getElementById('chainDetailText').innerHTML = d.en;
+      document.getElementById('chainDetailTelugu').innerText = d.te;
+      for (let i = 1; i <= 5; i++) {
+        const b = document.getElementById(`chain-btn-${i}`);
+        b.classList.remove('border-amber-400', 'ring-2', 'ring-purple-500');
+        if (i === step) b.classList.add('ring-2', 'ring-purple-500');
+      }
+    }
+
+    // ==========================================
+    // 4. QUIZ & INTERACTIVE EXERCISES
+    // ==========================================
+    function checkQuiz(qNum, selected, correct) {
+      const exp = document.getElementById(`qz-exp-${qNum}`);
+      exp.classList.remove('hidden');
+      ['a', 'b', 'c'].forEach(opt => {
+        document.getElementById(`qz-${qNum}-${opt}`).className = "w-full text-left px-3 py-2 rounded-lg border border-slate-300 bg-white text-xs sm:text-sm";
+      });
+
+      const btn = document.getElementById(`qz-${qNum}-${selected}`);
+      if (selected === correct) {
+        addScore(`qz-${qNum}`, 5);
+        btn.classList.add('!bg-emerald-600', '!text-white', '!border-emerald-600', 'font-bold');
+        exp.className = "text-xs p-2 rounded-lg bg-emerald-100 text-emerald-900 font-bold";
+        exp.innerHTML = `<i class="fa-solid fa-circle-check mr-1"></i> Correct Answer! (+5 points)`;
+      } else {
+        btn.classList.add('!bg-rose-100', '!text-rose-900', '!border-rose-400');
+        exp.className = "text-xs p-2 rounded-lg bg-rose-100 text-rose-900 font-bold";
+        exp.innerHTML = `<i class="fa-solid fa-circle-xmark mr-1"></i> Not quite right. Try again!`;
+      }
+    }
+
+    function highlightIMRYear(year, male, female, total, diff) {
+      const box = document.getElementById('imrInspector');
+      box.innerHTML = `
+        <div class="font-bold text-purple-950">
+          📊 <strong>Selected Year: ${year}</strong> — Male IMR: <span class="text-sky-700 font-extrabold">${male}</span> | Female IMR: <span class="text-rose-600 font-extrabold">${female}</span> | Total: <strong>${total}</strong>
+        </div>
+        <div class="bg-rose-100 text-rose-900 font-extrabold px-3 py-1 rounded-lg">
+          Difference (Female − Male) = ${diff} ${year === '2005' ? '(Highest Gap!)' : ''}
+        </div>
+      `;
+    }
+
+    function voteOpinion(num, stance) {
+      const p = document.getElementById(`op-${num}`);
+      p.classList.add('ring-2', 'ring-purple-500', 'bg-purple-50');
+    }
+
+    function addInterviewRow() {
+      const name = document.getElementById('newIntName').value.trim();
+      const status = document.getElementById('newIntStatus').value;
+      const opinion = document.getElementById('newIntOpinion').value.trim();
+      if (!name || !opinion) return;
+
+      const tbody = document.getElementById('projectTableBody');
+      const count = tbody.children.length + 1;
+      const tr = document.createElement('tr');
+      tr.className = "bg-purple-50/60";
+      tr.innerHTML = `
+        <td class="p-2.5 font-bold">${count}.</td>
+        <td class="p-2.5"><strong>${name}</strong></td>
+        <td class="p-2.5 text-emerald-700 font-bold">${status === 'Working' ? '✓ Yes' : '—'}</td>
+        <td class="p-2.5 text-amber-700 font-bold">${status !== 'Working' ? '✓ Homemaker' : '—'}</td>
+        <td class="p-2.5">${opinion}</td>
+      `;
+      tbody.appendChild(tr);
+      document.getElementById('newIntName').value = '';
+      document.getElementById('newIntOpinion').value = '';
+    }
+
+    // ==========================================
+    // 5. VOCABULARY MODAL & SPEECH SYNTHESIS
+    // ==========================================
+    function showWordModal(word, meaning) {
+      document.getElementById('modalWordTitle').innerText = word;
+      document.getElementById('modalWordMeaning').innerText = meaning;
+      document.getElementById('wordModal').classList.remove('hidden');
+      document.getElementById('modalSpeakBtn').onclick = () => speakText(`${word}. ${meaning.split('(')[0]}`);
+      speakText(word.split('(')[0]);
+    }
+
+    function closeWordModal() {
+      document.getElementById('wordModal').classList.add('hidden');
+    }
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-IN';
+        u.rate = 0.95;
+        window.speechSynthesis.speak(u);
+      }
+    }
+
+    function stopSpeech() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    }
+
+    // ==========================================
+    // 6. FORMSPREE SUBMISSION HANDLER
+    // ==========================================
+    const reportForm = document.getElementById('studentReportForm');
+    reportForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submitReportBtn');
+      const statusBox = document.getElementById('formStatusBox');
+      const studentName = document.getElementById('studentName').value.trim();
+      const rollNo = document.getElementById('rollNumber').value.trim();
+
+      document.getElementById('hiddenTimestamp').value = new Date().toLocaleString('en-IN');
+      document.getElementById('formSubject').value = `I Can Take Care of Myself Report: ${studentName} (Roll: ${rollNo}) - Time: ${formatTime(activeSeconds)}`;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Submitting Report...`;
+
+      try {
+        const formData = new FormData(reportForm);
+        const response = await fetch(reportForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        statusBox.classList.remove('hidden');
+        if (response.ok) {
+          statusBox.className = "p-4 rounded-xl text-sm font-bold bg-emerald-500/20 border border-emerald-400 text-emerald-100";
+          statusBox.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-300 mr-1.5"></i> Wonderful job, <strong>${studentName}</strong>! Your Study & Watch Report (Screen Time: <strong>${formatTime(activeSeconds)}</strong>, Quiz Score: <strong>${currentScore}/30</strong>) has been sent to <strong>balaswamysm@gmail.com</strong>.`;
+          submitBtn.innerHTML = `<i class="fa-solid fa-check"></i> Report Submitted Successfully`;
+        } else {
+          throw new Error('Network response not ok');
+        }
+      } catch (err) {
+        statusBox.classList.remove('hidden');
+        statusBox.className = "p-4 rounded-xl text-sm font-bold bg-amber-500/20 border border-amber-400 text-amber-100";
+        statusBox.innerHTML = `<i class="fa-solid fa-circle-info mr-1.5"></i> Submitting report via standard form post...`;
+        reportForm.submit();
+      }
+    });
+  </script>
+</body>
+</html>
