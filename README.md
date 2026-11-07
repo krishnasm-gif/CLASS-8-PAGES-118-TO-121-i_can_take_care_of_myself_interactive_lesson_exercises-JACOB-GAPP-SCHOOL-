@@ -1,0 +1,1 @@
+# CLASS-8-PAGES-118-TO-121-i_can_take_care_of_myself_interactive_lesson_exercises-JACOB-GAPP-SCHOOL-
